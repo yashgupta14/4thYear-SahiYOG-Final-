@@ -5,7 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/templates/signup.html')
+def signup():
+    return render_template('signup.html')
 
 @app.route('/templates/home.html')
 def home():
@@ -39,3 +43,4 @@ def submit_form():
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
+
