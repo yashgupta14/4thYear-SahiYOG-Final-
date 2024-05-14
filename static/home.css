@@ -149,7 +149,7 @@
     cursor: pointer;
 }
 
-img {
+#abt img {
     max-width: 100%;
     max-height: 70%;
     flex: 1;
@@ -171,11 +171,24 @@ img {
 }
 
 #abt2  h1{
+    color: #756D66;
     font-size: 50px;
     margin-bottom:2rem;
+    font-weight: light;
 }
 #abt2 p{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom:2rem;
+}
+
+#abt2  ul{
     font-size: 25px;
+}
+
+
+#abt2 li{
+    margin-left:25px
 }
 
 #contact{
@@ -210,4 +223,57 @@ img {
     margin-right: 20px;
    
 
+}
+
+
+.animation1.show {
+    animation: h1Animation 3s;
+}
+
+@keyframes h1Animation {
+    from{
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+
+.leftR.show {
+    animation: h2Animation 2s;
+}
+
+@keyframes h2Animation {
+    from{
+        transform: translateX(-6rem);
+    } to {
+        transform : translateX(0)
+    }
+}
+
+
+.abtDiv2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin:0 auto;
+    gap: 10rem;
+}
+
+.abtDiv2 img {
+    width:120%;
+    padding-right: 50px
+}
+
+.bottomU.show{
+    animation: h3Animation 1.2s;
+}
+
+@keyframes h3Animation {
+    from{
+        transform: translateY(6rem);
+    } to {
+        transform : translateY(0)
+    }
 }
