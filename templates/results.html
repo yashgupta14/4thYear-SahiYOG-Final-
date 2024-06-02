@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Calculator Results</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+    <title>Available Finances</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background-image: linear-gradient(rgba(69, 72, 82, 0.7),rgba(69, 69, 69, 0.7)),url('../static/bg_c1.jpg');
+            background-size: cover;
+            font-size: 14px;
+
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
+            max-height: 3000px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow-x: auto; /* Add horizontal scroll if needed */
         }
         h1 {
-            color: #333;
+            color: red;
+            font-size: 60px;
             text-align: center;
         }
         .results-table {
@@ -38,30 +50,31 @@
             white-space: nowrap; /* Prevent text wrapping in table cells */
         }
         .results-table th {
-            background-color: #f4f4f4;
+            background-color: #c8a9a9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Loan Calculator Results</h1>
+        <h1 class="animation1">Available Finance Options</h1>
         <div class="table-responsive">
             <table class="results-table">
                 <thead>
-                    <tr>
-                        <th>Loan Provider</th>
-                        <th>Maximum Loan Amount</th>
-                        <th>Interest Rate</th>
-                        <th>Business Turnover</th>
-                        <th>Annual Income</th>
-                        <th>Years in Business</th>
-                    </tr>
+                    <tbody>
+                        {{ results|safe }}
+                    </tbody>
                 </thead>
-                <tbody>
-                    {{ results|safe }}
-                </tbody>
+               
             </table>
         </div>
     </div>
+    <script>
+        const showAni1 = document.querySelectorAll(".animation1");
+        const observer1 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+        entry.target.classList.toggle("show", entry.isIntersecting);
+        });
+    });
+    </script>
 </body>
 </html>
